@@ -20,7 +20,7 @@ jobs:
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: stats
-          options: 'username=${{ github.repository_owner }}&show_icons=true&line_height=28&hide_border=true&card_width=347&include_all_commits=true&role=owner,collaborator&show=reviews,discussions_answered&hide_rank=true&exclude_repo=github-readme-stats&theme=github_dark&bg_color=000000'
+          options: 'username=${{ github.repository_owner }}&show_icons=true&line_height=28&hide_border=true&card_width=347&include_all_commits=true&role=owner,collaborator&show=reviews,discussions_answered&hide_rank=true&exclude_repo=github-stats-extended&theme=github_dark&bg_color=000000'
           path: profile/stats-dark.svg
           token: ${{ secrets.PAT }}
 
