@@ -18,11 +18,11 @@ jobs:
 
       - name: Generate stats (dark mode)
         run: |
-          curl -s "https://github-stats-extended.vercel.app/api?username=${{ github.actor }}&show_icons=true&theme=dark" > profiles/stats-dark.svg
+          curl -s "https://github-stats-extended.vercel.app/api?username=${{ github.actor }}&show_icons=true&theme=dark" > profile/stats-dark.svg
 
       - name: Generate top languages (dark mode)
         run: |
-          curl -s "https://github-stats-extended.vercel.app/api/top-langs/?username=${{ github.actor }}&langs_count=6" > profiles/top-langs-dark.svg
+          curl -s "https://github-stats-extended.vercel.app/api/top-langs/?username=${{ github.actor }}&langs_count=6&theme=dark" > profile/top-langs-dark.svg
 
       - name: Commit cards
         run: |
