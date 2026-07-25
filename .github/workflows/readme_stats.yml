@@ -18,16 +18,20 @@ jobs:
 
       - name: Generate stats (dark mode)
         run: |
-          curl -s "https://github-stats-extended.vercel.app/api?username=${{ github.actor }}&show_icons=true&theme=dark" > profile/stats-dark.svg
+          curl -fsSL --retry 3 "https://github-stats-extended.vercel.app/api?username=${{ github.repository_owner }}&show_icons=true&theme=dark" -o profile/stats-dark.svg
 
       - name: Generate top languages (dark mode)
         run: |
-          curl -s "https://github-stats-extended.vercel.app/api/top-langs/?username=${{ github.actor }}&langs_count=6&theme=dark" > profile/top-langs-dark.svg
+          curl -fsSL --retry 3 "https://github-stats-extended.vercel.app/api/top-langs/?username=${{ github.repository_owner }}&langs_count=6&theme=dark" -o profile/top-langs-dark.svg
 
       - name: Commit cards
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git add profile/*.svg
-          git commit -m "Update README cards" || exit 0
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Update README cards"
           git push
