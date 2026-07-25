@@ -1,6 +1,9 @@
 name: GitHub Readme Stats
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
   schedule:
   - cron: 0 */12 * * *  
 jobs:
