@@ -18,7 +18,7 @@ jobs:
 
       - name: Generate stats (dark mode)
         run: |
-          curl -s "https://github-readme-stats.vercel.app/api?username=${{ github.actor }}&show_icons=true&theme=dark" > profiles/stats-dark.svg
+          curl -s "https://github-stats-extended.vercel.app/api?username=${{ github.actor }}&show_icons=true&theme=dark" > profiles/stats-dark.svg
 
       - name: Generate top languages (dark mode)
         run: |
