@@ -25,7 +25,7 @@ jobs:
 
       - name: Generate top languages (dark mode)
         run: |
-          curl -fsSL --retry 3 "https://github-stats-extended.vercel.app/api/top-langs/?username=${{ github.repository_owner }}&langs_count=6&theme=dark" -o profile/top-langs-dark.svg
+          curl -fsSL --retry 3 "https://github-stats-extended.vercel.app/api/top-langs/?username=${{ github.repository_owner }}&layout=compact&langs_count=8&theme=dark" -o profile/top-langs-dark.svg
 
       - name: Commit cards
         run: |
